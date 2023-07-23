@@ -50,8 +50,24 @@ class numStr:
       if len(self.subtract) > 0:
          self.subtractStr()
 
+def test():
+   added      = random.randint(0,99999999999)
+   subtracted = random.randint(0,99999999999)
+   resulted = added-subtracted
+   result=numStr()
+   result.add = [str(added)]
+   result.subtract = [str(subtracted)]
+   result.calculate()
+   if str(resulted) != result.result:
+      print('%d - %d = %s' %(added,subtracted,result.result))
+
+import random
+random.seed()
+for i in range(1,10):
+  test()
+
 result = numStr()
-result.add = ['115']
-result.subtract = ['126']
+result.add = ['125']
+result.subtract = ['116']
 result.calculate()
 print(result.result)
